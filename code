@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Company Website</title>
+</head>
+<body style="margin:0;">
+
+    <!-- Top Frame -->
+    <div style="height:100px; background-color:lightblue; text-align:center; padding:10px;">
+        <img src="amazon.png" alt="Company Logo" height="60" style="float:left; margin-right:15px;">
+        <h2>Shop online at Amazon India</h2>
+    </div>
+
+    <!-- Middle Frame: Left (Navigation) + Center (Content) -->
+    <div style="display:flex; height:calc(100vh - 150px);">
+        
+        <!-- Left Navigation -->
+        <div style="width:200px; background-color:lightyellow; padding:10px;">
+            <h3>Navigation</h3>
+            <ul style="list-style-type:none; padding:0;">
+                <li><a href="#home" onclick="loadPage('home')" style="text-decoration:none;">Home</a></li>
+                <li><a href="#products" onclick="loadPage('products')" style="text-decoration:none;">Products</a></li>
+                <li><a href="#services" onclick="loadPage('services')" style="text-decoration:none;">Services</a></li>
+                <li><a href="#branches" onclick="loadPage('branches')" style="text-decoration:none;">Branches</a></li>
+                <li><a href="#about" onclick="loadPage('about')" style="text-decoration:none;">About Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Center Content -->
+        <div style="flex:1; padding:20px; background-color:white;">
+            <iframe id="centerFrame" srcdoc="
+                <h2>Welcome to My Company</h2>
+                <p>We provide world-class products and services.</p>
+                <img src='shop.jpg' width='1200'>
+            " style="width:100%; height:100%; border:none;"></iframe>
+        </div>
+    </div>
+
+    <!-- Bottom Frame -->
+    <div style="height:50px; background-color:lightgray; text-align:center; padding:10px;">
+        <p>&copy; 2025 Amazon Pvt. Ltd. All Rights Reserved.</p>
+    </div>
+
+    <!-- Script to Load Pages -->
+    <script>
+        function loadPage(page) {
+            let content = {
+                home: `
+                    <h2>Welcome to Our Company</h2>
+                    <p>We provide world-class products and services.</p>
+                    <img src='home.png' width='1200'>
+                `,
+                products: `
+                    <h2>Our Products</h2>
+                    <ul>
+                        <li>Smartphones</li>
+                        <li>Wireless headphones</li>
+                        <li>laptop</li>
+                        <li>smart watches</li>
+                    </ul>
+                    <img src='smartphone.jpg' width='400'>
+                    <img src='headphones.jpg' width='400'>
+                    <img src='laptop.png' width='400'>
+                    <img src='watch.jpg' width='400'>
+                `,
+                services: `
+                    <h2>Our Services</h2>
+                    <p>Explore Amazon Web Services.</p>
+                    <ul>
+                     <li> origins of Aws</li>
+                      <li> cloud computing</li>
+                      <li>highest standard for privarcy and data security</li>
+                      <li>trusted by millions</li>
+                       </ul> 
+                    <img src='origin.jpeg' width='600'>
+                   <img src='cloud.png' width='600'>
+                   <img src='privarcy.jpg' width='600'>
+                   <img src='trusted.jpeg' width='600'>
+                `,
+                branches: `
+                    <h2>Our Branches India</h2>
+                    <ul>
+                        <li>Chennai</li>
+                        <li>Hyderabad</li>
+                        <li>Bangalure</li>
+                        <li>Mumbai</li>
+                        <li>pune</li>
+                        <li>gurgaon</li>
+                    </ul>
+                    <img src='bang.jpg' width='1200'>
+                    
+
+                `,
+                about: `
+                    <h2>About My Company</h2>
+                    <p>it is a multinational technology company we are focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence</p>
+                    <img src='zon.jpg' width='1200'>
+                `
+            };
+            document.getElementById("centerFrame").srcdoc = content[page];
+        }
+    </script>
+
+</body>
+</html>
